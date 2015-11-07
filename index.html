@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-app="madLibs">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name=“viewport” content=“width=device-width, initial-scale=1.0, maximum-scale=1.0”>	
+	<meta name="format-detection" content="telephone=no">
+	
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	
+	<title>MadLibs</title>
+
+	<link rel="shortcut icon" href="">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body ng-controller="madLibsCtrl">
+	<div class="wrapper">
+		<header>
+			<div class="smiley">
+				<img src="img/smiley.png" alt="">
+			</div>
+			<div class="logo">
+				<img src="img/logo.png" alt="">
+			</div>
+		</header>
+
+		<section class="inputs">
+			<h2>Provide the following words: (all items shall be filled in)</h2>
+			<div class="flexi">
+				<div class="flexi-row">
+					<label for="gender">Your gender?</label>
+					<p><span>Male</span><input type="radio" name="gender" value="male" ng-change="genderChange()" checked ng-model="gender" /></p>
+					<p><span>Female</span><input type="radio" name="gender" value="female" ng-change="genderChange()" ng-model="gender"/></p>
+				</div>
+				<div class="flexi-row">
+					<input type="text" ng-model="form.playerName" ng-change="change()" placeholder="Your Name"><br/>
+					<input type="text" ng-model="form.jobTitle" ng-change="change()" placeholder="Job Title"><br/>
+					<input type="text" ng-model="form.dirtyTask" ng-change="change()" placeholder="Dirty Task">
+				</div>
+				<div class="flexi-row">
+					<input type="text" ng-model="form.tediousTask" ng-change="change()" placeholder="Tedious Task"><br/>
+					<input type="text" ng-model="form.celebrity" ng-change="change()" placeholder="Celebrity"><br/>
+					<input type="text" ng-model="form.uselessSkill" ng-change="change()" placeholder="useless Skill">
+				</div>
+				<div class="flexi-row">
+					<input type="text" ng-model="form.adjective" ng-change="change()" placeholder="adjective"><br/>
+					<input type="text" ng-model="form.hugeNumber" ng-change="change()" placeholder="huge Number"><br/>
+					<input type="text" ng-model="form.obnoxiuousCelbertity" ng-change="change()" placeholder="obnoxious Celebrity">
+				</div>
+			</div>
+
+		</section>
+
+		<section class="text" ng-show="filled">
+			<p>
+				{{form.playerName}} was a {{form.jobTitle}} who loved technology. Although {{pronoun}} loved parts of {{pronounPossessive}} job, {{pronoun}} absolutely hated {{form.tediousTask}} and {{form.dirtyTask}}. So, {{form.playerName}} met with {{pronounPossessive}} life mentor {{form.celebrity}} who told {{pronounPossessive}} to learn how to {{form.uselessSkill}} with Thinkful. Thinkful didn't offer a course on {{form.uselessSkill}} so {{pronoun}} studied programming instead.
+			</p>
+ 			<p>
+				What a great decision! With {{pronounPossessive}} new skills, {{form.playerName}} built a(n) {{form.adjective}} robot named {{form.obnoxiuousCelbertity}} that not only loved to {{form.dirtyTask}} but did it {{form.hugeNumber}} times faster.
+			</p>
+		</section>
+	</div>
+	
+
+	<script src="js/angular.min.js"></script>
+	<script src="js/script.js"></script>
+	
+</body>
+</html>
