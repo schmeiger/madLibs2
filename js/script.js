@@ -18,16 +18,15 @@ angular.module("madLibs", [])
 	$scope.pronounPossessive = "his";
 
 	$scope.filled = false;
-
 	$scope.change = function(){
 
+        var allFilled = true;
+        
 		for (var key in $scope.form) {
-			var allFilled = false;
-
-			if ($scope.form.hasOwnProperty(key)) {
-
-				if($scope.form[key] !== ""){
-				 	allFilled = true;
+			if ($scope.form.hasOwnProperty(key)) {                
+				if($scope.form[key] === ""){
+				 	allFilled = false;
+                    break;
 				}
 			}
 		}
